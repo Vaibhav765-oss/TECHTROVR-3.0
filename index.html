@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EmbedFest 2026 | Hardware Innovation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* ============ BASE ============ */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#020617;
+  color:#e2e8f0;
+  font-family:Poppins,sans-serif;
+  overflow-x:hidden;
+}
+
+/* ============ GRID BG ============ */
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+   linear-gradient(#0f172a 1px, transparent 1px),
+   linear-gradient(90deg,#0f172a 1px, transparent 1px);
+  background-size:40px 40px;
+  opacity:.2;
+  z-index:-1;
+}
+
+/* ============ HEADER ============ */
+
+header{
+  padding:30px;
+  text-align:center;
+  border-bottom:1px solid #0f172a;
+}
+
+header h1{
+  font-family:Orbitron;
+  color:#22d3ee;
+  letter-spacing:3px;
+}
+
+header span{
+  color:#22c55e;
+}
+
+/* ============ HERO ============ */
+
+.hero{
+  min-height:90vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  flex-direction:column;
+  background:
+   radial-gradient(circle,#22d3ee30,transparent 60%);
+}
+
+.hero h2{
+  font-size:3rem;
+  font-family:Orbitron;
+}
+
+.hero p{
+  max-width:600px;
+  margin:20px;
+  opacity:.8;
+}
+
+.hero button{
+  padding:14px 32px;
+  border:none;
+  background:linear-gradient(90deg,#22d3ee,#22c55e);
+  color:#020617;
+  font-weight:600;
+  border-radius:30px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.hero button:hover{
+  transform:scale(1.1);
+}
+
+/* ============ SECTIONS ============ */
+
+.section{
+  max-width:1200px;
+  margin:auto;
+  padding:80px 20px;
+}
+
+/* ============ CARDS ============ */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:rgba(255,255,255,0.03);
+  border:1px solid #0f172a;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 0 20px #020617;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  border-color:#22d3ee;
+}
+
+.card h3{
+  color:#22d3ee;
+  margin-bottom:10px;
+}
+
+/* ============ REGISTER PANEL ============ */
+
+.glass{
+  background:rgba(255,255,255,0.04);
+  backdrop-filter:blur(15px);
+  border:1px solid #0f172a;
+  border-radius:20px;
+  padding:40px;
+}
+
+/* ============ FORM ============ */
+
+form{
+  max-width:500px;
+  margin:auto;
+}
+
+.input{
+  margin:20px 0;
+}
+
+.input input,
+.input select{
+  width:100%;
+  padding:12px;
+  background:#020617;
+  border:1px solid #1e293b;
+  color:white;
+  border-radius:8px;
+  outline:none;
+}
+
+.input input:focus,
+.input select:focus{
+  border-color:#22d3ee;
+}
+
+.submit{
+  width:100%;
+  padding:14px;
+  border:none;
+  background:linear-gradient(90deg,#22d3ee,#22c55e);
+  color:#020617;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+/* ============ SUCCESS ============ */
+
+#success{
+  display:none;
+  text-align:center;
+}
+
+#success h2{
+  color:#22c55e;
+  margin-bottom:10px;
+}
+
+/* ============ FOOTER ============ */
+
+footer{
+  padding:30px;
+  text-align:center;
+  border-top:1px solid #0f172a;
+  opacity:.7;
+}
+
+/* ============ SCROLL FX ============ */
+
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+<h1>TECH<span>TROVE</span>3.0</h1>
+<p>THE NEXT BIG IS HARD BUILT</p>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<h2>Design • Build • Innovate</h2>
+<p>
+Show your skills in Embedded Systems, Robotics,
+IoT, AI Hardware & Automation.
+</p>
+
+<button onclick="goRegister()">Register Now</button>
+</section>
+
+<!-- ABOUT -->
+<section class="section reveal">
+
+<h2>About Event</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>⚙️ Embedded Design</h3>
+<p>Microcontrollers, RTOS, firmware development.</p>
+</div>
+
+<div class="card">
+<h3>🤖 Robotics</h3>
+<p>Autonomous bots, sensors, navigation.</p>
+</div>
+
+<div class="card">
+<h3>📡 IoT Systems</h3>
+<p>Smart devices, cloud integration.</p>
+</div>
+
+<div class="card">
+<h3>🧠 AI Hardware</h3>
+<p>Edge AI, FPGA, neural accelerators.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- SCHEDULE -->
+<section class="section reveal">
+
+<h2>Event Schedule</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Round 1</h3>
+<p>Online MCQ + Idea Screening</p>
+<p>10 March 2026</p>
+</div>
+
+<div class="card">
+<h3>Round 2</h3>
+<p>Prototype Submission</p>
+<p>25 March 2026</p>
+</div>
+
+<div class="card">
+<h3>Finale</h3>
+<p>Live Hardware Demo</p>
+<p>10 April 2026</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- REGISTER -->
+<section class="section reveal" id="register">
+
+<div class="glass">
+
+<h2 style="text-align:center">Registration Panel</h2>
+
+<form id="form">
+
+<div class="input">
+<input name="name" placeholder="Full Name" required>
+</div>
+
+<div class="input">
+<input type="email" name="email" placeholder="Email" required>
+</div>
+
+<div class="input">
+<input name="phone" placeholder="Phone" required>
+</div>
+
+<div class="input">
+<input name="college" placeholder="College" required>
+</div>
+
+<div class="input">
+<input name="branch" placeholder="Branch" required>
+</div>
+
+<div class="input">
+<select name="year" required>
+<option value="">Select Year</option>
+<option>1st</option>
+<option>2nd</option>
+<option>3rd</option>
+<option>4th</option>
+</select>
+</div>
+
+<div class="input">
+<select name="event" required>
+<option>Embedded Systems</option>
+<option>Robotics</option>
+<option>IoT</option>
+<option>AI Hardware</option>
+</select>
+</div>
+
+<button class="submit" id="btn">Submit Registration</button>
+
+</form>
+
+<div id="success">
+<h2>✅ Registration Successful</h2>
+<p>Your entry has been recorded.</p>
+<p>We will contact you soon.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 EmbedFest | Powered by Tech Club
+</footer>
+
+<script>
+
+/* CONFIG */
+const scriptURL="https://script.google.com/macros/s/AKfycbwK81bQmC2m0miEaFEFzOKpyvmbayD9JgdaHC2h35wyZQlmGpfDtJBOhxmhx6vai4iS/exec";
+
+/* PREVENT MULTIPLE */
+if(localStorage.getItem("done")){
+ showSuccess();
+}
+
+/* NAV */
+function goRegister(){
+ document.getElementById("register")
+ .scrollIntoView({behavior:"smooth"});
+}
+
+/* FORM */
+const form=document.getElementById("form");
+const btn=document.getElementById("btn");
+
+form.addEventListener("submit",e=>{
+
+ e.preventDefault();
+
+ if(localStorage.getItem("done")){
+  alert("Already Registered");
+  return;
+ }
+
+ btn.innerText="Processing...";
+ btn.disabled=true;
+
+ let data=new FormData(form);
+ let obj={};
+
+ data.forEach((v,k)=>obj[k]=v);
+
+ fetch(scriptURL,{
+  method:"POST",
+  body:JSON.stringify(obj)
+ })
+
+ .then(r=>r.json())
+ .then(r=>{
+  if(r.status=="success"){
+   localStorage.setItem("done","yes");
+   showSuccess();
+  }
+ })
+
+ .catch(()=>{
+  alert("Network Error");
+  btn.innerText="Submit";
+  btn.disabled=false;
+ });
+
+});
+
+/* SUCCESS */
+function showSuccess(){
+ form.style.display="none";
+ document.getElementById("success").style.display="block";
+}
+
+/* SCROLL FX */
+const els=document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll",()=>{
+
+ els.forEach(el=>{
+
+  if(el.getBoundingClientRect().top < window.innerHeight-100){
+   el.classList.add("show");
+  }
+
+ });
+
+});
+
+</script>
+
+</body>
+</html>
